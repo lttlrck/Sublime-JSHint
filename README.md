@@ -1,4 +1,4 @@
-This fork adds support for defining a preprocessor in .jshintrc allowing javascript to be massaged into plain JS before linting.
+This fork adds support for defining a preprocessor in .jshintrc allowing non-standard javascript to be massaged before linting.
 
 Stuart.
 
