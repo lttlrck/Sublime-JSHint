@@ -1,3 +1,7 @@
+This fork adds support for defining a preprocessor in .jshintrc allowing javascript to be massaged into plain JS before linting.
+
+Stuart.
+
 # JSHint Gutter for Sublime Text 2 and 3 via node.js
 #### [Sublime Text 3](http://www.sublimetext.com/3)
 #### [JSHint](https://github.com/jshint/jshint)
