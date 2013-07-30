@@ -68,6 +68,7 @@
   var currentFolder = path.dirname(filePath);
   var lastCurrentFolder;
   var jshintrcPath;
+  var preprocessor;
 
   // Try and get some persistent options from the plugin folder.
   if (fs.existsSync(jshintrcPath = pluginFolder + path.sep + jshintrc)) {
@@ -87,11 +88,19 @@
     }
   }
 
+  if( options.preprocessor) {
+    if( fs.existsSync( options.preprocessor)) {
+      preprocessor= fs.readFileSync( pluginFolder + path.sep + options.preprocessor, "utf8");
+    }
+  }
+
   // Read the source file and, when done, lint the code.
   fs.readFile(tempPath, "utf8", function(err, data) {
     if (err) {
       return;
     }
+
+    data= preprocessor.run( data);
 
     // Mark the output as being from JSHint.
     log("*** JSHint output ***");
